@@ -55,7 +55,7 @@ def main():
     output_dir.mkdir(exist_ok=True)
 
     # Listar todos os arquivos MP3
-    arquivos_audio = sorted(curso_dir.glob("part_*.mp3"))
+    arquivos_audio = sorted(curso_dir.glob("part_*.mp3")) + sorted(curso_dir.glob("class01_*.mp3"))
 
     print(f"Encontrados {len(arquivos_audio)} arquivos de áudio")
     print("Carregando modelo Faster-Whisper 'base'...")
