@@ -68,6 +68,12 @@ def main():
 
     # Transcrever cada arquivo
     for i, arquivo in enumerate(arquivos_audio):
+        # Pular se já existe
+        txt_file = output_dir / f"{arquivo.stem}_transcricao.txt"
+        if txt_file.exists():
+            print(f"\n[{i+1}/{len(arquivos_audio)}] PULANDO {arquivo.name} (já processado)")
+            continue
+
         print(f"\n[{i+1}/{len(arquivos_audio)}] Processando {arquivo.name}")
         print("-" * 60)
 
